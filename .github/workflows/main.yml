@@ -40,5 +40,6 @@ jobs:
       
       - name: Run Java script
         run: |
+          ls
           cd demo
           java -cp "lib\*;src\test\java\" com.example.demo.Main
