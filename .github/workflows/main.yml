@@ -34,3 +34,6 @@ jobs:
           
       - name: Setup Java JDK
         uses: actions/setup-java@v3.0.0
+        with:
+          distribution: 'temurin' # See 'Supported distributions' for available options
+          java-version: '17'
