@@ -13,7 +13,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println(TOTPGenerator.getTwoFactorCode());
         //WebDriverManager.chromedriver().setup();
-        System.setProperty("webdriver.chrome.driver", "D:\a\Automatic-U-Pass-BC-Renewer\Automatic-U-Pass-BC-Renewer\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "D:\\a\\Automatic-U-Pass-BC-Renewer\\Automatic-U-Pass-BC-Renewer\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://upassbc.translink.ca/");
         driver.manage().window().maximize();
