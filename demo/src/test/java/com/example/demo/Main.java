@@ -7,10 +7,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import java.util.Scanner;
 //import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+        System.out.println("Enter username");
+
+        String userName = myObj.nextLine();  // Read user input
+        System.out.println("Username is: " + userName);  // Output user input
         System.out.println(TOTPGenerator.getTwoFactorCode());
         //WebDriverManager.chromedriver().setup();
         System.setProperty("webdriver.chrome.driver", "D:\\a\\Automatic-U-Pass-BC-Renewer\\Automatic-U-Pass-BC-Renewer\\chromedriver.exe");

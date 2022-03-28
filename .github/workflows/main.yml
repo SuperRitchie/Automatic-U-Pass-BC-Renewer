@@ -43,3 +43,4 @@ jobs:
           ls
           cd demo
           java -cp "lib\*;src\test\java\" com.example.demo.Main
+          test terminal input
