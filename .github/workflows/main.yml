@@ -39,8 +39,9 @@ jobs:
           java-version: '17'
       
       - name: Run Java script
+        env:
+          USERNAME: testPrint
         run: |
           ls
           cd demo
           java -cp "lib\*;src\test\java\" com.example.demo.Main
-          test terminal input
