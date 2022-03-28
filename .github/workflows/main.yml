@@ -37,3 +37,9 @@ jobs:
         with:
           distribution: 'temurin' # See 'Supported distributions' for available options
           java-version: '17'
+      
+      - name: Run Java script
+        run: |
+          cd demo
+          javac -cp "lib\*" src\test\java\com\example\demo\*.java
+          java -cp "lib\*;src\test\java\" com.example.demo.Main
