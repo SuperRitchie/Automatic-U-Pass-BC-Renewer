@@ -24,8 +24,8 @@ public class Main {
         Select clickThis = new Select(dropDownListBox);
         clickThis.selectByValue("sfu");
         driver.findElement(By.id("goButton")).click();
-        driver.findElement(By.id("username")).sendKeys("testInput");
-        driver.findElement(By.id("password")).sendKeys("testInput");
+        driver.findElement(By.id("username")).sendKeys(System.getenv("UNI_USERNAME"));
+        driver.findElement(By.id("password")).sendKeys(System.getenv("UNI_PASSWORD"));
         driver.findElement(By.name("submit")).click();
         driver.switchTo().frame("duo_iframe");
         driver.findElement(By.id("totpCode")).sendKeys(TOTPGenerator.getTwoFactorCode());

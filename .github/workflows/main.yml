@@ -6,6 +6,10 @@ name: U-Pass Request
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
+
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron: '0 19 16 * *'
   
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -40,7 +44,8 @@ jobs:
       
       - name: Run Java script
         env:
-          USERNAME: testPrint
+          UNI_USERNAME: ${{ secrets.SFU_USERID }}
+          UNI_PASSWORD: ${{ secrets.SFU_PASSWORD }}
         run: |
           ls
           cd demo
