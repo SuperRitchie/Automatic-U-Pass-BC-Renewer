@@ -46,6 +46,7 @@ jobs:
         env:
           UNI_USERNAME: ${{ secrets.SFU_USERID }}
           UNI_PASSWORD: ${{ secrets.SFU_PASSWORD }}
+          UNI_MFA: ${{ secrets.SFU_MFA }}
         run: |
           ls
           cd demo

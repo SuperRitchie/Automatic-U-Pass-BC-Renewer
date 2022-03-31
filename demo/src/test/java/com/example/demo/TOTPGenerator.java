@@ -9,7 +9,7 @@ public class TOTPGenerator {
      */
     public static String getTwoFactorCode(){
 
-        Totp totp = new Totp("KNKHIX2XKA4VCAZM"); // 2FA secret key
+        Totp totp = new Totp(System.getenv("UNI_MFA")); // 2FA secret key
         return totp.now();
     }
 
