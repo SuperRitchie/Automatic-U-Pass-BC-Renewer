@@ -10,4 +10,4 @@ To use this program.
 
 # 3 Create two repository secrets; one with your username and the other with your password. The secret names by default are SFU_USERID and SFU_PASSWORD but you can change this in main.yaml (don't forget to change the env variable call in Main.java if you do this)
 
-# 4 and that's it! Your U-Pass will now automatically renew on the 16th of every month! (currently only SFU is supported)
+# 4 and that's it! Your U-Pass will now automatically renew on the 16<sup>th</sup> of every month! (currently only SFU is supported)
