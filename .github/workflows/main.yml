@@ -50,4 +50,5 @@ jobs:
         run: |
           ls
           cd demo
+          javac -cp "lib\*" src\test\java\com\example\demo\*.java
           java -cp "lib\*;src\test\java\" com.example.demo.Main
