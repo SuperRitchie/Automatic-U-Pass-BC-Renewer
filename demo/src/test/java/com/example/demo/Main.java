@@ -14,7 +14,7 @@ public class Main {
     public static void main(String[] args) {
         String username = System.getenv("USERNAME");
         System.out.println(username);
-        System.out.println(TOTPGenerator.getTwoFactorCode("test"));
+        System.out.println(TOTPGenerator.getTwoFactorCode());
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.get("https://upassbc.translink.ca/");
