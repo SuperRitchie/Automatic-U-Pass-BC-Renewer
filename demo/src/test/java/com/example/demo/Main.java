@@ -34,5 +34,7 @@ public class Main {
         WebElement myDynamicElement = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.id("chk_1")));
         driver.findElement(By.id("chk_1")).click();
         driver.findElement(By.xpath("//*[@id=\"requestButton\"]")).click();
+        driver.close();
+        driver.quit();
     }
 }
