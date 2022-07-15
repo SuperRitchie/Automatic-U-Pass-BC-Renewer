@@ -47,6 +47,8 @@ jobs:
           UNI_USERNAME: ${{ secrets.SFU_USERID }}
           UNI_PASSWORD: ${{ secrets.SFU_PASSWORD }}
           UNI_MFA: ${{ secrets.SFU_MFA }}
+          BOT_TOKEN: ${{ secrets.TELEGRAMBOT }}
+          CHAT_ID: ${{ secrets.TELEGRAMID }}
         run: |
           ls
           cd demo

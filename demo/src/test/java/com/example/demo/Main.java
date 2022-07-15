@@ -34,6 +34,14 @@ public class Main {
         WebElement myDynamicElement = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.id("chk_1")));
         driver.findElement(By.id("chk_1")).click();
         driver.findElement(By.xpath("//*[@id=\"requestButton\"]")).click();
+
+
+        String botToken = System.getenv("BOT_TOKEN");
+        String chatID = System.getenv("CHAT_ID");
+        String message = "Reached end of Automatic U-Pass BC Renewer";
+        String telegramURL = "https://api.telegram.org/bot" + botToken + "/sendMessage?chat_id=" + chatID + "&text=" + message;
+        driver.get(telegramURL);
+
         driver.close();
         driver.quit();
     }
