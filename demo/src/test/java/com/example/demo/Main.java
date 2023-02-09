@@ -27,19 +27,23 @@ public class Main {
         driver.findElement(By.id("password")).sendKeys(System.getenv("UNI_PASSWORD"));
         driver.findElement(By.name("submit")).click();
         driver.switchTo().frame("duo_iframe");
-        driver.findElement(By.id("totpCode")).sendKeys(TOTPGenerator.getTwoFactorCode());
-        driver.findElement(By.xpath("//*[@id=\"totpLogin\"]/div[4]/button[1]")).click();
+
+        driver.findElement(By.id("code")).sendKeys(TOTPGenerator.getTwoFactorCode());
+        // click the button with text "Submit"
+        driver.findElement(By.xpath("//button[text()='Submit']")).click();
+
         System.out.println("Requesting");
         driver.switchTo().parentFrame();
-        WebElement myDynamicElement = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.id("chk_1")));
+        WebElement myDynamicElement = (new WebDriverWait(driver, 10))
+                .until(ExpectedConditions.presenceOfElementLocated(By.id("chk_1")));
         driver.findElement(By.id("chk_1")).click();
         driver.findElement(By.xpath("//*[@id=\"requestButton\"]")).click();
-
 
         String botToken = System.getenv("BOT_TOKEN");
         String chatID = System.getenv("CHAT_ID");
         String message = "Reached end of Automatic U-Pass BC Renewer";
-        String telegramURL = "https://api.telegram.org/bot" + botToken + "/sendMessage?chat_id=" + chatID + "&text=" + message;
+        String telegramURL = "https://api.telegram.org/bot" + botToken + "/sendMessage?chat_id=" + chatID + "&text="
+                + message;
         driver.get(telegramURL);
 
         driver.close();
