@@ -20,6 +20,8 @@ public class Main {
         System.out.println(username);
         System.out.println(TOTPGenerator.getTwoFactorCode());
         WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().clearDriverCache().setup();
+        WebDriverManager.chromedriver().clearResolutionCache().setup();
         WebDriver driver = new ChromeDriver(chromeOptions);
         driver.get("https://upassbc.translink.ca/");
         driver.manage().window().maximize();
