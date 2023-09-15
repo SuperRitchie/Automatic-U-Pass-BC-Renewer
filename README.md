@@ -2,7 +2,7 @@
 This program automatically renews your U-Pass BC on the 16th of every month at noon! (includes 2FA support!)
 
 # Usage
-To use this program.
+The following are instructions to use this program...
 
 # 1 Fork this repository
 
