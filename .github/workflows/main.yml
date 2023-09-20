@@ -37,7 +37,7 @@ jobs:
           echo test, and deploy your project.
           
       - name: Setup Java JDK
-        uses: actions/setup-java@v3.12.0
+        uses: actions/setup-java@v3.13.0
         with:
           distribution: 'microsoft' # See 'Supported distributions' for available options
           java-version: '17'
