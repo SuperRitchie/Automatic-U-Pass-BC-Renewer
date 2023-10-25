@@ -1,4 +1,5 @@
 # Automatic-U-Pass-BC-Renewer
+[![Monthly U-Pass Renewal](https://github.com/SuperRitchie/Automatic-U-Pass-BC-Renewer/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/SuperRitchie/Automatic-U-Pass-BC-Renewer/actions/workflows/main.yml)\
 This program automatically renews your U-Pass BC on the 16th of every month at noon! (includes 2FA support!)
 
 # Usage
