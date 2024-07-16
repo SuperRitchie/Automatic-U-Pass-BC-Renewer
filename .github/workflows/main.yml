@@ -6,7 +6,6 @@ name: U-Pass Request
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-
   schedule:
     # * is a special character in YAML so you have to quote this string
     - cron: '0 19 16 * *'
@@ -26,23 +25,27 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
-          
+      # Setup Java JDK
       - name: Setup Java JDK
-        uses: actions/setup-java@v4.2.1
+        uses: actions/setup-java@v4
         with:
           distribution: 'microsoft' # See 'Supported distributions' for available options
           java-version: '17'
       
-      - name: Run Java script
+      # Set up Maven
+      - name: Set up Apache Maven
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'microsoft'
+          java-version: '17'
+          cache: maven
+
+      # Run Maven commands
+      - name: Build with Maven
+        run: mvn -B package --file pom.xml
+
+      # Run the Java application
+      - name: Run Java application
         env:
           UNI_USERNAME: ${{ secrets.SFU_USERID }}
           UNI_PASSWORD: ${{ secrets.SFU_PASSWORD }}
@@ -50,7 +53,4 @@ jobs:
           BOT_TOKEN: ${{ secrets.TELEGRAMBOT }}
           CHAT_ID: ${{ secrets.TELEGRAMID }}
         run: |
-          ls
-          cd demo
-          javac -cp "lib\*" src\test\java\com\example\demo\*.java
-          java -cp "lib\*;src\test\java\" com.example.demo.Main
+          mvn exec:java -Dexec.mainClass="com.example.demo.Main"
