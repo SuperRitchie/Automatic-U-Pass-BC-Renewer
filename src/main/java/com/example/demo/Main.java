@@ -38,7 +38,7 @@ public class Main {
         // click the button with text "Submit"
         driver.findElement(By.xpath("//button[text()='Submit']")).click();
 
-        System.out.println("Requesting");
+        System.out.println("Requesting!");
         driver.switchTo().parentFrame();
         WebElement myDynamicElement = (new WebDriverWait(driver, 10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.id("chk_1")));
