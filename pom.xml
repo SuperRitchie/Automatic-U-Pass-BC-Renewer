@@ -33,8 +33,9 @@
             <artifactId>commons-lang3</artifactId>
             <version>3.12.0</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.brotli/dec -->
         <dependency>
-            <groupId>com.github.pnpnpn</groupId>
+            <groupId>org.brotli</groupId>
             <artifactId>dec</artifactId>
             <version>0.1.2</version>
         </dependency>
@@ -58,10 +59,11 @@
             <artifactId>httpcore5-h2</artifactId>
             <version>5.2.1</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-server</artifactId>
-            <version>4.1.2</version>
+            <version>3.141.59</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
