@@ -40,9 +40,9 @@ jobs:
           java-version: '17'
           cache: maven
 
-      # Run Maven commands
-      - name: Build with Maven
-        run: mvn -B package --file pom.xml
+      # Run Maven clean and compile
+      - name: Clean and Compile with Maven
+        run: mvn clean compile --file pom.xml
 
       # Run the Java application
       - name: Run Java application
