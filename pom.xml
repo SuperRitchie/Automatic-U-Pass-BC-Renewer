@@ -94,14 +94,15 @@
                 <version>3.0.0</version>
                 <executions>
                     <execution>
+                        <phase>package</phase>
                         <goals>
                             <goal>java</goal>
                         </goals>
+                        <configuration>
+                            <mainClass>com.example.demo.Main</mainClass>
+                        </configuration>
                     </execution>
                 </executions>
-                <configuration>
-                    <mainClass>com.example.demo.Main</mainClass>
-                </configuration>
             </plugin>
         </plugins>
     </build>
